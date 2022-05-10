@@ -102,3 +102,14 @@ dist
 
 # TernJS port file
 .tern-port
+
+# VsCode stuff(for now)
+.devcontainer
+.vscode
+*.code-workspace
+
+# docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+setup.js
