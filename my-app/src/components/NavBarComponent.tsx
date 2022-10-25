@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import About from './pages/AboutPage'
+import FourZeroFour from './pages/FourZeroFour'
 import Home from './pages/HomePage'
 import Layout from './pages/Layout'
 
@@ -17,6 +18,7 @@ export default class NavBarComponent extends Component<Props, State> {
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
 					<Route path="about" element={<About />} />
+					<Route path="*" element={<FourZeroFour />} />
 				</Route>
 			</Routes>
 		)
