@@ -5,11 +5,10 @@ import NavBarComponent from './components/NavBarComponent';
 
 function App() {
 	return (
-		<div className="App bg-gray-400 min-h-screen">
-			<div className='bg-gray-400'>
-				<NavBarComponent />
+		<div className="App bg-gray-800 min-h-screen dark text-gray-200">
+			<div className='mx-5'>
 				<TitleBar />
-				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<NavBarComponent />
 			</div>
 		</div>
 	);

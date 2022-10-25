@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 type Props = {}
 
@@ -11,19 +11,10 @@ export default class Layout extends Component<Props, State> {
 	render() {
 		return (
 			<div>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/about">About</Link>
-						</li>
-					</ul>
+				<nav className='bg-green-600 text-lg text-black font-semibold rounded'>
+					<NavLink to="/" className={(navigationData) => (navigationData.isActive ? "bg-green-800" : "bg-green-600") + ' px-10 inline-block rounded-l'}>Home</NavLink>
+					<NavLink to="/about" className={(navigationData) => (navigationData.isActive ? "bg-green-800" : "bg-green-600") + ' px-10 inline-block'}>About</NavLink>
 				</nav>
-
-				<hr />
-
 				<Outlet />
 			</div>
 		)
