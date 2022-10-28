@@ -22,15 +22,30 @@ const Carousel = (props: PropsWithChildren) => {
 		if (currentIndex < (length - 1)) {
 			setCurrentIndex(prevState => prevState + 1)
 		}
-	}
+	};
 
 	const prev = () => {
 		if (currentIndex > 0) {
 			setCurrentIndex(prevState => prevState - 1)
 		}
-	}
+	};
+
+	// const posClick = (i: number) => {
+	// 	setCurrentIndex(i);
+	// };
 
 	var pageStatus = [];
+
+	for (let i = 0; i < length; i++) {
+		pageStatus.push(
+			<div
+				className={'w-12 h-4 my-2 mx-2 rounded-sm ' + ((currentIndex === i) ? 'bg-neutral-300' : 'bg-neutral-600 ')}
+				onClick={() => setCurrentIndex(i)}
+			>
+				{''}
+			</div>
+		);
+	}
 
 	return (
 		// <>
@@ -38,12 +53,12 @@ const Carousel = (props: PropsWithChildren) => {
 		// 		<div className={this.props.height + ' bg-red-300 w-1/12'}>1</div>
 		// 		<div className={this.props.height + ' bg-red-500 w-10/12'}>2</div>
 		// 		<div className={this.props.height + ' bg-red-300 w-1/12'}>3</div>
-		// 	</div>
+		// 	</div>	
 		// 	<div className='bg-slate-400 flex'>
 		// 		<div></div>
 		// 	</div>
 		// </>
-		<div className={props.height + ' w-full grid place-items-center bg-green-300'}>
+		<div className={props.height + ' w-full grid place-items-center'}>
 			<div className="w-full flex flex-col max-w-3xl ">            {/* carousel-container*/}
 				{
 					currentIndex > 0 &&
@@ -65,8 +80,8 @@ const Carousel = (props: PropsWithChildren) => {
 					</button>
 				}
 			</div>
-			<div>
-				{currentIndex}
+			<div className='flex'>
+				{pageStatus}
 			</div>
 		</div>
 	)
