@@ -9,7 +9,7 @@ export default class About extends Component<Props, State> {
 
 	render() {
 		return (
-			<div>About</div>
+			<div className='px-5'>About</div>
 		)
 	}
 }
