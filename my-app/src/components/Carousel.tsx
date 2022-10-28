@@ -7,7 +7,7 @@ type PropsWithChildren = {
 
 type State = {}
 
-const arrow_css = 'absolute z-10 top-1/2 w-12 h-12 rounded-3xl bg-slate-500 border border-solid border-black';
+const arrow_css = 'z-10 absolute top-3/4 w-12 h-32 rounded bg-slate-500 border border-solid border-gray-300';
 
 const Carousel = (props: PropsWithChildren) => {
 	const { children } = props;
@@ -30,6 +30,8 @@ const Carousel = (props: PropsWithChildren) => {
 		}
 	}
 
+	var pageStatus = [];
+
 	return (
 		// <>
 		// 	<div className={this.props.height + ' bg-slate-700 px-64 flex'}>
@@ -41,21 +43,30 @@ const Carousel = (props: PropsWithChildren) => {
 		// 		<div></div>
 		// 	</div>
 		// </>
-		<div className='w-full grid place-items-center'>
-			<div className="w-full flex flex-col max-w-xl">            {/* carousel-container*/}
-				<button className={arrow_css + ' left-6'} onClick={prev} style={{ transform: `translateY(-50 %)` }}>
-					&lt;
-				</button>
-				<div className="w-full flex relative">            {/* carousel-wrapper*/}
+		<div className={props.height + ' w-full grid place-items-center bg-green-300'}>
+			<div className="w-full flex flex-col max-w-3xl ">            {/* carousel-container*/}
+				{
+					currentIndex > 0 &&
+					<button className={arrow_css + ' left-6'} onClick={prev} style={{ transform: `translateY(-50 %)` }}>
+						&lt;
+					</button>
+				}
+				<div className="w-full flex relative ">            {/* carousel-wrapper*/}
 					<div className="overflow-hidden w-full h-full">{/* carousel-content-wrapper*/}
 						<div className="flex scrollbar-hide transition-all duration-200 " style={{ transform: `translateX(-${currentIndex * 100}%)` }}>    {/* carousel-content*/}
 							{children}
 						</div>
 					</div>
 				</div>
-				<button className={arrow_css + ' right-6'} onClick={next} style={{ transform: `translateY(-50 %)` }}>
-					&gt;
-				</button>
+				{
+					currentIndex < (length - 1) &&
+					<button className={arrow_css + ' right-6'} onClick={next} style={{ transform: `translateY(-50 %)` }}>
+						&gt;
+					</button>
+				}
+			</div>
+			<div>
+				{currentIndex}
 			</div>
 		</div>
 	)

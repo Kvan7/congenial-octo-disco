@@ -14,7 +14,7 @@ export default class Git extends Component<Props, State> {
 		return (
 			<div className='px-5'>
 				Git
-				<Carousel height="h-96">
+				<Carousel height="h-fit">
 					<img src="https://cataas.com/cat/says/hello" alt='1' className={carousel_child_css} />
 					<img src="https://cataas.com/cat/says/imNumer2" alt='2' className={carousel_child_css} />
 					{/* <h1 className={carousel_child_css}>bottom_text</h1> */}

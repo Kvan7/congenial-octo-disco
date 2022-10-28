@@ -14,7 +14,7 @@ export default class Layout extends Component<Props, State> {
 	render() {
 		return (
 			<div>
-				<nav className='bg-green-600 text-lg text-black font-semibold rounded-lg sticky top-0 my-4 mx-5'>
+				<nav className='bg-green-600 text-lg text-black font-semibold rounded-lg sticky top-0 my-4 mx-5 z-50'>
 					<NavLink to="/" end className={(navigationData) => link_winds + 'rounded-l-lg ' + (navigationData.isActive ? "bg-green-800" : "bg-green-600 hover:bg-green-700")}>Home</NavLink>
 					<NavLink to="/git" className={(navigationData) => link_winds + '' + (navigationData.isActive ? "bg-green-800" : "bg-green-600  hover:bg-green-700")}>Git</NavLink>
 					<NavLink to="/about" className={(navigationData) => link_winds + '' + (navigationData.isActive ? "bg-green-800" : "bg-green-600  hover:bg-green-700")}>About</NavLink>
