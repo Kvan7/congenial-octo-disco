@@ -5,9 +5,9 @@ type PropsWithChildren = {
 	children?: ReactNode | undefined;
 }
 
-type State = {}
+// type State = {}
 
-const arrow_css = 'z-10 absolute top-3/4 w-12 h-32 rounded bg-slate-500 border border-solid border-gray-300';
+const arrow_css = 'z-10 absolute  w-12 h-full rounded bg-slate-500 border border-solid border-gray-300';
 
 const Carousel = (props: PropsWithChildren) => {
 	const { children } = props;
@@ -30,10 +30,6 @@ const Carousel = (props: PropsWithChildren) => {
 		}
 	};
 
-	// const posClick = (i: number) => {
-	// 	setCurrentIndex(i);
-	// };
-
 	var pageStatus = [];
 
 	for (let i = 0; i < length; i++) {
@@ -48,27 +44,21 @@ const Carousel = (props: PropsWithChildren) => {
 	}
 
 	return (
-		// <>
-		// 	<div className={this.props.height + ' bg-slate-700 px-64 flex'}>
-		// 		<div className={this.props.height + ' bg-red-300 w-1/12'}>1</div>
-		// 		<div className={this.props.height + ' bg-red-500 w-10/12'}>2</div>
-		// 		<div className={this.props.height + ' bg-red-300 w-1/12'}>3</div>
-		// 	</div>	
-		// 	<div className='bg-slate-400 flex'>
-		// 		<div></div>
-		// 	</div>
-		// </>
-		<div className={props.height + ' w-full grid place-items-center'}>
-			<div className="w-full flex flex-col max-w-3xl ">            {/* carousel-container*/}
+		<div className={props.height + ' w-full grid place-items-center '}>
+			{/* carousel-container*/}
+			<div className="w-full flex flex-col max-w-3xl ">
 				{
 					currentIndex > 0 &&
 					<button className={arrow_css + ' left-6'} onClick={prev} style={{ transform: `translateY(-50 %)` }}>
 						&lt;
 					</button>
 				}
-				<div className="w-full flex relative ">            {/* carousel-wrapper*/}
-					<div className="overflow-hidden w-full h-full">{/* carousel-content-wrapper*/}
-						<div className="flex scrollbar-hide transition-all duration-200 " style={{ transform: `translateX(-${currentIndex * 100}%)` }}>    {/* carousel-content*/}
+				{/* carousel-wrapper*/}
+				<div className="w-full flex relative ">
+					{/* carousel-content-wrapper*/}
+					<div className="overflow-hidden w-full h-full">
+						{/* carousel-content*/}
+						<div className="flex scrollbar-hide transition-all duration-200 " style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
 							{children}
 						</div>
 					</div>

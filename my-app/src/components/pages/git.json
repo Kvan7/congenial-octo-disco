@@ -1,0 +1,74 @@
+[
+	{
+		"repo-name": "congenial-octo-disco",
+		"lang": [
+			"TypeScript",
+			"HTML",
+			"JavaScript",
+			"CSS"
+		],
+		"url": "https://github.com/Kvan7/congenial-octo-disco",
+		"last-commit": {
+			"desc": "added random cat count",
+			"branch": "main",
+			"contributer": "Kvan7",
+			"date": "10/28/2022",
+			"files": 1,
+			"add": 15,
+			"del": 3,
+			"verified": true
+		},
+		"commit-count": 13,
+		"clone": "git@github.com:Kvan7/congenial-octo-disco.git",
+		"license": "GPL-3.0",
+		"about": "Information placeholder"
+	},
+	{
+		"repo-name": "RoadRisk",
+		"lang": [
+			"Python",
+			"C",
+			"Cython",
+			"HTML",
+			"JavaScript",
+			"CSS",
+			"Other"
+		],
+		"url": "https://github.com/RyanOrth/RoadRisk",
+		"last-commit": {
+			"desc": "License info",
+			"branch": "main",
+			"contributer": "gabrielclark3330",
+			"date": "10/01/2022",
+			"files": 1,
+			"add": 3,
+			"del": 0,
+			"verified": true
+		},
+		"commit-count": 95,
+		"clone": "git@github.com:RyanOrth/RoadRisk.git",
+		"license": "MPL-2.0",
+		"about": "A simple application to give a relative risk amount for driving on particular roads. This was made for the Casualty Actuarial Society in competition for their inaugrual Hackuary competition. This was made using Flutter as the front-end and Django for the back-end."
+	},
+	{
+		"repo-name": "animated-winner",
+		"lang": [
+			"Jupyter Notebook"
+		],
+		"url": "https://github.com/Kvan7/animated-winner",
+		"last-commit": {
+			"desc": "jsut simple testings",
+			"branch": "main",
+			"contributer": "Kvan7",
+			"date": "09/15/2022",
+			"files": 1,
+			"add": 1906,
+			"del": 1,
+			"verified": true
+		},
+		"commit-count": 3,
+		"clone": "git@github.com:Kvan7/animated-winner.git",
+		"license": "GPL-3.0",
+		"about": "A web app that uses machine learning to predict salary of a profession"
+	}
+]
