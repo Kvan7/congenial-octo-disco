@@ -9,7 +9,10 @@ export default class FourZeroFour extends Component<Props, State> {
 
 	render() {
 		return (
-			<div className='px-5'>you got haked</div>
+			<div className='px-5'>
+				<div className="text-xl font-extrabold tracking-wider">404</div>
+				you got haked
+			</div>
 		)
 	}
 }

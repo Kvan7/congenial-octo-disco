@@ -35,7 +35,14 @@ export default class GitPage extends Component<Props, State> {
 		var repoElements = [];
 		for (let i = 0; i < repos.length; i++) {
 			const element = repos[i];
-
+			repoElements.push(
+				<RepoFull
+					about={element["about"]}
+					name={element["repo-name"]}
+					url={element["url"]}
+					clone={element["clone"]}
+				/>
+			);
 		}
 
 
@@ -49,7 +56,10 @@ export default class GitPage extends Component<Props, State> {
 					{elms}
 				</Carousel>
 				<hr />
+				{repoElements}
+				<hr />
 				{all_elms}
+
 			</div>
 		)
 	}

@@ -20,14 +20,33 @@ type PropsWithChildren = {
 	clone?: string;
 	license?: string;
 	lastCommit?: Commit;
+	imgName?: string;
 	children?: ReactNode | undefined;
 };
 
 
 const RepoFull = (props: PropsWithChildren) => {
 	return (
-		<div>
-			repoFull
+		<div className="my-4 p-2 border-green-300 border-4 flex">
+			<div>
+				<div>
+					<a className="text-xl font-bold tracking-wider underline" href={props.url} target="_blank" rel="noreferrer">
+						{props.name}
+					</a>
+				</div>
+				<div className="">
+					{props.about}
+				</div>
+				<code className="">
+					{props.clone}
+				</code>
+				<div className="">
+					{props.url}
+				</div>
+			</div>
+			<div>
+				<img src={require("../img/roadrisk.png")} alt="icon" />
+			</div>
 		</div>
 	);
 };
