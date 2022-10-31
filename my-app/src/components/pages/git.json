@@ -21,6 +21,7 @@
 		"commit-count": 13,
 		"clone": "git@github.com:Kvan7/congenial-octo-disco.git",
 		"license": "GPL-3.0",
+		"img": "octo",
 		"about": "Information placeholder"
 	},
 	{
@@ -48,6 +49,7 @@
 		"commit-count": 95,
 		"clone": "git@github.com:RyanOrth/RoadRisk.git",
 		"license": "MPL-2.0",
+		"img": "roadrisk",
 		"about": "A simple application to give a relative risk amount for driving on particular roads. This was made for the Casualty Actuarial Society in competition for their inaugrual Hackuary competition. This was made using Flutter as the front-end and Django for the back-end."
 	},
 	{
@@ -69,6 +71,7 @@
 		"commit-count": 3,
 		"clone": "git@github.com:Kvan7/animated-winner.git",
 		"license": "GPL-3.0",
+		"img": "winner",
 		"about": "A web app that uses machine learning to predict salary of a profession"
 	}
 ]

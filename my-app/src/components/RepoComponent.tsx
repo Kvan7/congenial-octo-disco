@@ -17,7 +17,7 @@ type PropsWithChildren = {
 	url: string;
 	lang?: [string];
 	commitCount?: number;
-	clone?: string;
+	clone: string;
 	license?: string;
 	lastCommit?: Commit;
 	imgName?: string;
@@ -27,7 +27,7 @@ type PropsWithChildren = {
 
 const RepoFull = (props: PropsWithChildren) => {
 	return (
-		<div className="my-4 p-2 border-green-300 border-4 flex">
+		<div className="my-4 p-2 border-green-300 border-4 flex ">
 			<div>
 				<div>
 					<a className="text-xl font-bold tracking-wider underline" href={props.url} target="_blank" rel="noreferrer">
@@ -37,15 +37,19 @@ const RepoFull = (props: PropsWithChildren) => {
 				<div className="">
 					{props.about}
 				</div>
-				<code className="">
-					{props.clone}
-				</code>
-				<div className="">
-					{props.url}
+				<div className="py-4">
+					<code className="bg-slate-600 py-1 px-2 ">
+						{props.clone}
+					</code>
 				</div>
 			</div>
-			<div>
-				<img src={require("../img/roadrisk.png")} alt="icon" />
+			<div className="mr-0 ml-auto">
+				<img src={require("../img/" + props.imgName + ".png")} alt="icon" />
+				<div className="text-center">
+					<a className="underline" href={props.url} target="_blank" rel="noreferrer">
+						{props.url}
+					</a>
+				</div>
 			</div>
 		</div>
 	);

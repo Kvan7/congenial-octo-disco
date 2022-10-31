@@ -41,6 +41,7 @@ export default class GitPage extends Component<Props, State> {
 					name={element["repo-name"]}
 					url={element["url"]}
 					clone={element["clone"]}
+					imgName={element["img"]}
 				/>
 			);
 		}
