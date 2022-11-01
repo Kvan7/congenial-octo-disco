@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import CommitComponent from "./CommitComponent";
 
 type Commit = {
 	desc: string,
@@ -24,6 +25,29 @@ type PropsWithChildren = {
 	children?: ReactNode | undefined;
 };
 
+const defaultCommit: Commit = {
+	desc: "",
+	branch: "",
+	contributer: "",
+	date: new Date(0),
+	files: 0,
+	add: 0,
+	del: 0,
+	verified: false
+};
+
+const defaultProps: PropsWithChildren = {
+	about: undefined,
+	name: "",
+	url: "",
+	lang: [""],
+	commitCount: 0,
+	clone: "",
+	license: "",
+	lastCommit: defaultCommit,
+	imgName: "",
+}
+
 
 const RepoFull = (props: PropsWithChildren) => {
 	return (
@@ -42,6 +66,10 @@ const RepoFull = (props: PropsWithChildren) => {
 						{props.clone}
 					</code>
 				</div>
+				{
+					props.lastCommit !== undefined &&
+					<CommitComponent commit={props.lastCommit} />
+				}
 			</div>
 			<div className="mr-0 ml-auto">
 				<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
@@ -63,5 +91,6 @@ const RepoShort = () => {
 	);
 };
 
+RepoFull.defaultProps = defaultProps;
 
 export { RepoFull, RepoShort };

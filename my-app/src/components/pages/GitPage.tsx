@@ -42,6 +42,10 @@ export default class GitPage extends Component<Props, State> {
 					url={element["url"]}
 					clone={element["clone"]}
 					imgName={element["img"]}
+					lastCommit={{
+						desc: element["last-commit"]["desc"],
+						contributer: element["last-commit"]["contributer"]
+					}}
 				/>
 			);
 		}
