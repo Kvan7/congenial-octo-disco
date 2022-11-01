@@ -44,7 +44,7 @@ const RepoFull = (props: PropsWithChildren) => {
 				</div>
 			</div>
 			<div className="mr-0 ml-auto">
-				<img src={require("../img/" + props.imgName + ".png")} alt="icon" />
+				<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
 				<div className="text-center">
 					<a className="underline" href={props.url} target="_blank" rel="noreferrer">
 						{props.url}
