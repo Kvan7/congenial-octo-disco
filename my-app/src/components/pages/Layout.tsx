@@ -15,12 +15,12 @@ const Layout = (props: Props) => {
 		const cachedRef = ref.current;
 		const observer = new IntersectionObserver(
 			([e]) => {
-				// setIsSticky(e.intersectionRatio >= 0.4316258351893096);
-				setIsSticky(e.isIntersecting);
+				// console.log(e);
+				setIsSticky(!e.isIntersecting);
 			},
 			{
-				threshold: [0.4316258351893096],
-				rootMargin: "16px",
+				threshold: [0],
+				rootMargin: "16px 0px 0px 0px",
 			}
 		);
 		if (cachedRef) {
@@ -33,7 +33,8 @@ const Layout = (props: Props) => {
 	const whenSticky = "";
 	const whenNotSticky = "rounded-lg top-0 my-4 mx-5";
 	return (
-		<div ref={ref} id="NavBarDivComponent" className="-top-px pt-px">
+		<div>
+			<div ref={ref} id="NavBarDivComponent" className="-top-px pt-px" />
 			<nav className={(isSticky ? whenSticky : whenNotSticky) + ' bg-green-600 text-lg text-black font-semibold top-0 my-4 sticky z-50'}>
 				<NavLink to="/" end className={(navigationData) => link_winds + (isSticky ? " " : 'rounded-l-lg ') + (navigationData.isActive ? "bg-green-800" : "bg-green-600 hover:bg-green-700")}>Home</NavLink>
 				<NavLink to="/git" className={(navigationData) => link_winds + '' + (navigationData.isActive ? "bg-green-800" : "bg-green-600  hover:bg-green-700")}>Git</NavLink>
