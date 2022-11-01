@@ -35,16 +35,26 @@ export default class GitPage extends Component<Props, State> {
 		var repoElements = [];
 		for (let i = 0; i < repos.length; i++) {
 			const element = repos[i];
+			const com = element["last-commit"];
 			repoElements.push(
 				<RepoFull
 					about={element["about"]}
 					name={element["repo-name"]}
+					lang={element["lang"]}
+					commitCount={element["commit-count"]}
+					license={element["license"]}
 					url={element["url"]}
 					clone={element["clone"]}
 					imgName={element["img"]}
 					lastCommit={{
-						desc: element["last-commit"]["desc"],
-						contributer: element["last-commit"]["contributer"]
+						desc: com["desc"],
+						contributer: com["contributer"],
+						branch: com["branch"],
+						date: new Date(com["date"]),
+						files: com["files"],
+						add: com["add"],
+						del: com["del"],
+						verified: com["verified"]
 					}}
 				/>
 			);

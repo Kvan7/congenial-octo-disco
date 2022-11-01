@@ -16,7 +16,7 @@ type PropsWithChildren = {
 	about: string | undefined;
 	name: string;
 	url: string;
-	lang?: [string];
+	lang?: string[];
 	commitCount?: number;
 	clone: string;
 	license?: string;

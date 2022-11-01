@@ -18,7 +18,7 @@ type Props = {
 const CommitComponent = (props: Props) => {
 
 	return (
-		<div>
+		<div className='m-4 border p-2'>
 			<div className='text-xl font-semibold'>
 				{props.commit.desc}
 			</div>
