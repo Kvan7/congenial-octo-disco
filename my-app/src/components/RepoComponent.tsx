@@ -51,19 +51,19 @@ const defaultProps: PropsWithChildren = {
 
 const RepoFull = (props: PropsWithChildren) => {
 	return (
-		<div className="my-4 p-2 border-green-300 border-4 flex ">
-			<div>
-				<div>
-					<a className="text-xl font-bold tracking-wider underline" href={props.url} target="_blank" rel="noreferrer">
+		<div className="my-4 p-4 border-green-300 border-4 flex ">
+			<div className="w-7/12">
+				<div className="border-b-4 w-full">
+					<a className="text-3xl font-bold tracking-wider font-mono" href={props.url} target="_blank" rel="noreferrer">
 						{props.name}
 					</a>
 				</div>
-				<div className="">
+				<div className="mt-4">
 					{props.about}
 				</div>
 				<div className="py-4">
-					<code className="bg-slate-600 py-1 px-2 ">
-						{props.clone}
+					<code className="bg-slate-600 py-1 px-2 ml-4 ">
+						{'git clone ' + props.clone}
 					</code>
 				</div>
 				{
@@ -71,7 +71,7 @@ const RepoFull = (props: PropsWithChildren) => {
 					<CommitComponent commit={props.lastCommit} />
 				}
 			</div>
-			<div className="mr-0 ml-auto">
+			<div className="grid place-items-center w-5/12">
 				<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
 				<div className="text-center">
 					<a className="underline" href={props.url} target="_blank" rel="noreferrer">
