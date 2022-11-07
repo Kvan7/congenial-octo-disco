@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 type Props = {}
 
-type State = {}
+// type State = {}
 
 const link_winds = 'inline-block max-w-xs w-1/12 text-center '
 
@@ -15,7 +15,6 @@ const Layout = (props: Props) => {
 		const cachedRef = ref.current;
 		const observer = new IntersectionObserver(
 			([e]) => {
-				// console.log(e);
 				setIsSticky(!e.isIntersecting);
 			},
 			{
@@ -39,6 +38,7 @@ const Layout = (props: Props) => {
 				<NavLink to="/" end className={(navigationData) => link_winds + (isSticky ? " pl-16 pr-10 " : 'px-10 rounded-l-lg ') + (navigationData.isActive ? "bg-green-800" : "bg-green-600 hover:bg-green-700")}>Home</NavLink>
 				<NavLink to="/git" className={(navigationData) => link_winds + 'px-10 ' + (navigationData.isActive ? "bg-green-800" : "bg-green-600  hover:bg-green-700")}>Git</NavLink>
 				<NavLink to="/about" className={(navigationData) => link_winds + 'px-10 ' + (navigationData.isActive ? "bg-green-800" : "bg-green-600  hover:bg-green-700")}>About</NavLink>
+				<a href='https://search.kvan.dev' className={link_winds + "px-10 bg-green-600  hover:bg-green-700"}> Search </a>
 			</nav>
 			<Outlet />
 		</div>

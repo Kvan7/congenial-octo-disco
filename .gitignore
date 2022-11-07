@@ -113,3 +113,6 @@ Dockerfile
 docker-compose.yml
 .dockerignore
 setup.js
+
+*.bkp
+*.dtmp
