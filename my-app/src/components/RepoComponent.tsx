@@ -52,7 +52,7 @@ const defaultProps: PropsWithChildren = {
 
 const RepoFull = (props: PropsWithChildren) => {
 	return (
-		<div className="my-4 p-4 border-green-300 border-4 flex ">
+		<div className="my-4 p-4 border-green-300 border-4 flex " id={props.name}>
 			<div className="w-7/12">
 				<div className="border-b-4 w-full">
 					<a className="text-3xl font-bold tracking-wider font-mono" href={props.url} target="_blank" rel="noreferrer">
@@ -92,9 +92,9 @@ const RepoShort = (props: PropsWithChildren) => {
 					<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
 				</div>
 				<div className="w-1/2 px-2">
-					<div className="text-4xl font-bold underline">
+					<a href={'#' + props.name} className="text-4xl font-bold underline">
 						{props.name}
-					</div>
+					</a>
 					<div className="text-lg">
 						{props.about}
 					</div>
