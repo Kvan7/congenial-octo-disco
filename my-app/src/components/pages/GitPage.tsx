@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from '../Carousel';
-import { RepoFull } from '../RepoComponent';
+import { RepoFull, RepoShort } from '../RepoComponent';
 import repos from './git.json';
 
 type Props = {};
@@ -17,13 +17,6 @@ export default class GitPage extends Component<Props, State> {
 	render() {
 
 		var elms = [];
-		var count = Math.ceil(Math.random() * 4) + 2;
-		for (var i = 0; i < count; i++) {
-			elms.push(
-				<img src={"https://cataas.com/cat/says/" + sayss[i]} alt={i.toString()} className={carousel_child_css} />
-			);
-		}
-
 		var all_elms = [];
 		for (let i = 0; i < 10; i++) {
 			all_elms.push(
@@ -36,6 +29,18 @@ export default class GitPage extends Component<Props, State> {
 		for (let i = 0; i < repos.length; i++) {
 			const element = repos[i];
 			const com = element["last-commit"];
+			if (i < 5) {
+				elms.push(
+					<RepoShort
+						about={element["about"]}
+						name={element["repo-name"]}
+						imgName={element["img"]}
+						url={element["url"]}
+						clone={element["clone"]}
+						className={carousel_child_css}
+					/>
+				);
+			}
 			repoElements.push(
 				<RepoFull
 					about={element["about"]}

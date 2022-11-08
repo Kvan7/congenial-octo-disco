@@ -7,7 +7,7 @@ type PropsWithChildren = {
 
 // type State = {}
 
-const arrow_css = 'z-10 absolute  w-12 h-full rounded bg-slate-500 border border-solid border-gray-300';
+const arrow_css = 'z-10 w-12 mx-2 rounded bg-slate-600 text-black font-bold text-xl';//border border-solid border-gray-300';
 
 const Carousel = (props: PropsWithChildren) => {
 	const { children } = props;
@@ -22,11 +22,17 @@ const Carousel = (props: PropsWithChildren) => {
 		if (currentIndex < (length - 1)) {
 			setCurrentIndex(prevState => prevState + 1)
 		}
+		else {
+			setCurrentIndex(() => 0)
+		}
 	};
 
 	const prev = () => {
 		if (currentIndex > 0) {
 			setCurrentIndex(prevState => prevState - 1)
+		}
+		else {
+			setCurrentIndex(() => length - 1)
 		}
 	};
 
@@ -44,15 +50,12 @@ const Carousel = (props: PropsWithChildren) => {
 	}
 
 	return (
-		<div className={props.height + ' w-full grid place-items-center '}>
+		<div className={'w-full grid place-items-center '}>
 			{/* carousel-container*/}
-			<div className="w-full flex flex-col max-w-3xl ">
-				{
-					currentIndex > 0 &&
-					<button className={arrow_css + ' left-6'} onClick={prev} style={{ transform: `translateY(-50 %)` }}>
-						&lt;
-					</button>
-				}
+			<div className="w-full flex  max-w-3xl ">
+				<button className={arrow_css + ' left-6'} onClick={prev} style={{ transform: `translateY(-50 %)` }}>
+					&lt;
+				</button>
 				{/* carousel-wrapper*/}
 				<div className="w-full flex relative ">
 					{/* carousel-content-wrapper*/}
@@ -63,12 +66,9 @@ const Carousel = (props: PropsWithChildren) => {
 						</div>
 					</div>
 				</div>
-				{
-					currentIndex < (length - 1) &&
-					<button className={arrow_css + ' right-6'} onClick={next} style={{ transform: `translateY(-50 %)` }}>
-						&gt;
-					</button>
-				}
+				<button className={arrow_css + ' right-6'} onClick={next} style={{ transform: `translateY(-50 %)` }}>
+					&gt;
+				</button>
 			</div>
 			<div className='flex'>
 				{pageStatus}

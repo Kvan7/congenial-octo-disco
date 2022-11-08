@@ -13,6 +13,7 @@ type Commit = {
 };
 
 type PropsWithChildren = {
+	className?: string;
 	about: string | undefined;
 	name: string;
 	url: string;
@@ -83,10 +84,22 @@ const RepoFull = (props: PropsWithChildren) => {
 	);
 };
 
-const RepoShort = () => {
+const RepoShort = (props: PropsWithChildren) => {
 	return (
-		<div>
-			repo shrt
+		<div className={props.className}>
+			<div className="border-green-600 py-4 px-2 flex border">
+				<div className="w-1/2 px-2">
+					<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
+				</div>
+				<div className="w-1/2 px-2">
+					<div className="text-4xl font-bold underline">
+						{props.name}
+					</div>
+					<div className="text-lg">
+						{props.about}
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
