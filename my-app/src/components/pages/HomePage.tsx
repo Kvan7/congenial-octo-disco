@@ -10,13 +10,32 @@ export default class Home extends Component<Props, State> {
 
 	render() {
 		return (
-			<div className='px-5'>
-				<div>Home</div>
-				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p className='w-24'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<NavLink to="/about" end className='bg-slate-700'>Home</NavLink>
-				<p className='w-24'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
+			<>
+				<div className='w-full h-64 bg-blue-400' />
+				<div className='px-5'>
+					<div className='text-right text-4xl font-extrabold tracking-wider'>Welcom Text</div>
+					<div className='flex'>
+						<div>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, libero praesentium. Enim, ex animi aspernatur nostrum est quae corporis qui quasi, aliquam cupiditate magnam eveniet, soluta modi recusandae impedit deserunt.
+						</div>
+						<div className='flex'>
+							<div>
+								<div className='bg-green-800 border h-48 w-48' />
+								<div className='bg-green-800 border h-48 w-48' />
+								<div className='bg-green-800 border h-48 w-48' />
+								<div className='bg-green-800 border h-48 w-48' />
+							</div>
+							<div>
+								<div className='bg-green-800 border h-48 w-48' />
+								<div className='bg-green-800 border h-48 w-48' />
+								<div className='bg-green-800 border h-48 w-48' />
+								<div className='bg-green-800 border h-48 w-48' />
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</>
 		)
 	}
 }

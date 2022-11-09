@@ -84,7 +84,16 @@ const RepoFull = (props: PropsWithChildren) => {
 	);
 };
 
-const RepoShort = (props: PropsWithChildren) => {
+function RepoShort(props: PropsWithChildren) {
+	// document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
+	// 	anchor.addEventListener('click', function (e) {
+	// 		e.preventDefault();
+
+	// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
+	// 			behavior: 'smooth'
+	// 		});
+	// 	});
+	// });
 	return (
 		<div className={props.className}>
 			<div className="border-green-600 py-4 px-2 flex border">
