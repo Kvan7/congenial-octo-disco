@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-type Props = {}
+type Props = {};
 
-type State = {}
+type State = {};
 
 export default class About extends Component<Props, State> {
-	state = {}
+	constructor(props: Props) {
+		super(props);
+		this.state = {};
+	}
 
 	render() {
-		return (
-			<div className='px-5'>About</div>
-		)
+		return <div className='px-5'>About</div>;
 	}
 }

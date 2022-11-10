@@ -15,6 +15,7 @@ module.exports = {
 		tsconfigRootDir: __dirname,
 	},
 	rules: {
+		'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
 		'react/jsx-filename-extension': [
 			'warn',
 			{
@@ -29,11 +30,6 @@ module.exports = {
 				tsx: 'never',
 			},
 		],
-		'prettier/prettier': [
-			'error',
-			{
-				endOfLine: 'lf',
-			},
-		],
+		'prettier/prettier': 'error',
 	},
 };

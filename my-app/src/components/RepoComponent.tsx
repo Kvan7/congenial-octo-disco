@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
-import CommitComponent from "./CommitComponent";
+import React from 'react';
+import CommitComponent from './CommitComponent';
 
 type Commit = {
-	desc: string,
-	branch?: string,
-	contributer: string,
-	date?: Date,
-	files?: number,
-	add?: number,
-	del?: number,
-	verified?: boolean
+	desc: string;
+	branch?: string;
+	contributer: string;
+	date?: Date;
+	files?: number;
+	add?: number;
+	del?: number;
+	verified?: boolean;
 };
 
 type PropsWithChildren = {
@@ -17,102 +17,109 @@ type PropsWithChildren = {
 	about: string | undefined;
 	name: string;
 	url: string;
-	lang?: string[];
-	commitCount?: number;
+	// lang?: string[];
+	// commitCount?: number;
 	clone: string;
-	license?: string;
+	// license?: string;
 	lastCommit?: Commit;
 	imgName?: string;
-	children?: ReactNode | undefined;
+	// children?: ReactNode | undefined;
+};
+
+type PropsWithChildrenShort = {
+	name: string;
+	// url: string;
+	about: string | undefined;
+	imgName?: string;
+	className?: string;
 };
 
 const defaultCommit: Commit = {
-	desc: "",
-	branch: "",
-	contributer: "",
+	desc: '',
+	branch: '',
+	contributer: '',
 	date: new Date(0),
 	files: 0,
 	add: 0,
 	del: 0,
-	verified: false
+	verified: false,
 };
 
-const defaultProps: PropsWithChildren = {
-	about: undefined,
-	name: "",
-	url: "",
-	lang: [""],
-	commitCount: 0,
-	clone: "",
-	license: "",
-	lastCommit: defaultCommit,
-	imgName: "",
-}
+function RepoFull(props: PropsWithChildren) {
+	const { name, about, imgName, className, url, clone, lastCommit } = props;
 
-
-const RepoFull = (props: PropsWithChildren) => {
 	return (
-		<div className="my-4 p-4 border-green-300 border-4 flex " id={props.name}>
-			<div className="w-7/12">
-				<div className="border-b-4 w-full">
-					<a className="text-3xl font-bold tracking-wider font-mono" href={props.url} target="_blank" rel="noreferrer">
-						{props.name}
-					</a>
+		<div className={className}>
+			<div className='my-4 p-4 border-green-300 border-4 flex ' id={name}>
+				<div className='w-7/12'>
+					<div className='border-b-4 w-full'>
+						<a
+							className='text-3xl font-bold tracking-wider font-mono'
+							href={url}
+							target='_blank'
+							rel='noreferrer'
+						>
+							{name}
+						</a>
+					</div>
+					<div className='mt-4'>{about}</div>
+					<div className='py-4'>
+						<code className='bg-slate-600 py-1 px-2 ml-4 '>
+							{`git clone ${clone}`}
+						</code>
+					</div>
+					{lastCommit !== undefined && <CommitComponent commit={lastCommit} />}
 				</div>
-				<div className="mt-4">
-					{props.about}
-				</div>
-				<div className="py-4">
-					<code className="bg-slate-600 py-1 px-2 ml-4 ">
-						{'git clone ' + props.clone}
-					</code>
-				</div>
-				{
-					props.lastCommit !== undefined &&
-					<CommitComponent commit={props.lastCommit} />
-				}
-			</div>
-			<div className="grid place-items-center w-5/12">
-				<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
-				<div className="text-center">
-					<a className="underline" href={props.url} target="_blank" rel="noreferrer">
-						{props.url}
-					</a>
-				</div>
-			</div>
-		</div>
-	);
-};
-
-function RepoShort(props: PropsWithChildren) {
-	// document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
-	// 	anchor.addEventListener('click', function (e) {
-	// 		e.preventDefault();
-
-	// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
-	// 			behavior: 'smooth'
-	// 		});
-	// 	});
-	// });
-	return (
-		<div className={props.className}>
-			<div className="border-green-600 py-4 px-2 flex border">
-				<div className="w-1/2 px-2">
-					<img className="" src={require("../img/" + props.imgName + ".png")} alt="icon" />
-				</div>
-				<div className="w-1/2 px-2">
-					<a href={'#' + props.name} className="text-4xl font-bold underline">
-						{props.name}
-					</a>
-					<div className="text-lg">
-						{props.about}
+				<div className='grid place-items-center w-5/12'>
+					<img className='' src={`./img/${imgName}.png`} alt='icon' />
+					<div className='text-center'>
+						<a
+							className='underline'
+							href={url}
+							target='_blank'
+							rel='noreferrer'
+						>
+							{url}
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
-};
+}
 
-RepoFull.defaultProps = defaultProps;
+function RepoShort(props: PropsWithChildrenShort) {
+	const { name, about, imgName, className } = props;
+
+	return (
+		<div className={className}>
+			<div className='border-green-600 py-4 px-2 flex border'>
+				<div className='w-1/2 px-2'>
+					<img className='' src={`./img/${imgName}.png`} alt='icon' />
+				</div>
+				<div className='w-1/2 px-2'>
+					<a href={`#${name}`} className='text-4xl font-bold underline'>
+						{name}
+					</a>
+					<div className='text-lg'>{about}</div>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+RepoFull.defaultProps = {
+	// lang: [''],
+	// commitCount: 0,
+	// license: '',
+	className: '',
+	lastCommit: defaultCommit,
+	imgName: '',
+	// children: <div />,
+};
+RepoShort.defaultProps = {
+	imgName: '',
+	className: '',
+};
 
 export { RepoFull, RepoShort };
