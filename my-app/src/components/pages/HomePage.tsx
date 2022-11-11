@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GitCarousel from '../GitCarousel';
 
 type Props = {};
 
@@ -18,27 +19,21 @@ export default class Home extends Component<Props, State> {
 					<div className='text-right text-4xl font-extrabold tracking-wider'>
 						Welcom Text
 					</div>
-					<div className='flex'>
-						<div>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Blanditiis, libero praesentium. Enim, ex animi aspernatur nostrum
-							est quae corporis qui quasi, aliquam cupiditate magnam eveniet,
-							soluta modi recusandae impedit deserunt.
-						</div>
-						<div className='flex'>
-							<div>
-								<div className='bg-green-800 border h-48 w-48' />
-								<div className='bg-green-800 border h-48 w-48' />
-								<div className='bg-green-800 border h-48 w-48' />
-								<div className='bg-green-800 border h-48 w-48' />
-							</div>
-							<div>
-								<div className='bg-green-800 border h-48 w-48' />
-								<div className='bg-green-800 border h-48 w-48' />
-								<div className='bg-green-800 border h-48 w-48' />
-								<div className='bg-green-800 border h-48 w-48' />
-							</div>
-						</div>
+					<div className='p-2 text-lg'>
+						This is my website and i do coding and cool stuffs. I go to school
+						still and i am internemt student. I ddo agmes too play games
+					</div>
+					<GitCarousel />
+					<div className='text-lg w-full border-b'> This site uses: </div>
+					<div className='flex flex-wrap justify-around'>
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
+						<img src='./logo192.png' alt='react-logo' className=' h-24 w-24' />
 					</div>
 				</div>
 			</>
