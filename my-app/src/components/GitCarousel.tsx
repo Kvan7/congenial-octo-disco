@@ -1,7 +1,9 @@
 import React from 'react';
-import Carousel from './Carousel';
+// import Carousel from './Carousel';
+import { Carousel } from 'react-responsive-carousel';
 import repos from './pages/git.json';
 import { RepoShort } from './RepoComponent';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 type Props = {
 	className?: string;
