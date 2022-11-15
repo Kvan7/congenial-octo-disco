@@ -28,14 +28,16 @@ function GitCarousel(props: Props) {
 					imgName={element.img}
 					// url={element.url}
 					// clone={element.clone}
-					className='w-full shrink-0 flex-grow'
+					className='w-full shrink  md:flex-grow'
 				/>
 			);
 		}
 	}
 	return (
 		<div className={className}>
-			<Carousel>{elements}</Carousel>
+			<Carousel infiniteLoop autoPlay interval={10000} className='min-w-0'>
+				{elements}
+			</Carousel>
 		</div>
 	);
 }

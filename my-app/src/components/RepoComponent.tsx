@@ -93,11 +93,11 @@ function RepoShort(props: PropsWithChildrenShort) {
 
 	return (
 		<div className={className}>
-			<div className='border-green-600  w-auto  flex border'>
-				<div className='w-1/2 p-8 '>
+			<div className='border-green-600 w-fit md:flex border-2'>
+				<div className='md:w-1/2 p-8 '>
 					<img className='' src={`./img/${imgName}.png`} alt='icon' />
 				</div>
-				<div className='w-1/2 p-8'>
+				<div className='md:w-1/2 p-8'>
 					<a href={`#${name}`} className='text-4xl font-bold underline'>
 						{name}
 					</a>

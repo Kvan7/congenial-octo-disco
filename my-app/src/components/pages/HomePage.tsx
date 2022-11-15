@@ -23,8 +23,8 @@ export default class Home extends Component<Props, State> {
 						This is my website and i do coding and cool stuffs. I go to school
 						still and i am internemt student. I ddo agmes too play games
 					</div>
-					<div className='w-full grid place-items-center'>
-						<GitCarousel className='w-7/12 p-1 border' />
+					<div className='w-full flex justify-center'>
+						<GitCarousel className='md:w-6/12 sm:w-10/12 w-full p-1 shrink' />
 					</div>
 					<div className='text-lg w-full border-b'> This site uses: </div>
 					<div className='flex flex-wrap justify-around'>
