@@ -35,7 +35,13 @@ function GitCarousel(props: Props) {
 	}
 	return (
 		<div className={className}>
-			<Carousel infiniteLoop autoPlay interval={10000} className='min-w-0'>
+			<Carousel
+				infiniteLoop
+				autoPlay
+				interval={10000}
+				className='min-w-0'
+				showThumbs={false}
+			>
 				{elements}
 			</Carousel>
 		</div>

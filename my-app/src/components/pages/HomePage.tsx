@@ -14,7 +14,7 @@ export default class Home extends Component<Props, State> {
 	render() {
 		return (
 			<>
-				<div className='w-full h-64 bg-blue-400' />
+				<div className='w-full h-1/3 bg-blue-400' />
 				<div className='px-5'>
 					<div className='text-right text-4xl font-extrabold tracking-wider'>
 						Welcom Text

@@ -64,7 +64,7 @@ function RepoFull(props: PropsWithChildren) {
 					</div>
 					<div className='mt-4'>{about}</div>
 					<div className='py-4'>
-						<code className='bg-slate-600 py-1 px-2 ml-4 '>
+						<code className='bg-slate-600 py-1 px-2 ml-4 border overflow-x-scroll whitespace-nowrap w-full'>
 							{`git clone ${clone}`}
 						</code>
 					</div>
@@ -93,7 +93,7 @@ function RepoShort(props: PropsWithChildrenShort) {
 
 	return (
 		<div className={className}>
-			<div className='border-green-600 w-fit md:flex border-2'>
+			<div className='border-green-600 w-full md:flex border-2'>
 				<div className='md:w-1/2 p-8 '>
 					<img className='' src={`./img/${imgName}.png`} alt='icon' />
 				</div>

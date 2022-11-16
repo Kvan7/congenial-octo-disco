@@ -56,12 +56,14 @@ export default class GitPage extends Component<Props, State> {
 		return (
 			<div className='px-5'>
 				<div className='text-3xl'>Git</div>
-				<GitCarousel />
+				<div className='w-full flex justify-center'>
+					<GitCarousel className='md:w-10/12  w-full p-1 shrink' />
+				</div>
 				<hr />
 				<div className='grid place-items-center py-4'>
 					<div className='text-3xl font-bold underline'> Commit Calendar </div>
 					<img
-						className='w-full px-12 py-8'
+						className='w-full md:px-12 py-8'
 						src='https://ghchart.rshah.org/Kvan7'
 						alt='commit chart'
 					/>
