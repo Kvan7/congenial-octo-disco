@@ -63,10 +63,8 @@ function RepoFull(props: PropsWithChildren) {
 						</a>
 					</div>
 					<div className='mt-4'>{about}</div>
-					<div className='py-4'>
-						<code className='bg-slate-600 py-1 px-2 ml-4 border overflow-x-scroll whitespace-nowrap w-full'>
-							{`git clone ${clone}`}
-						</code>
+					<div className='py-4 overflow-x-scroll whitespace-nowrap w-full shrink'>
+						<code className='py-1 px-2 ml-4 border bg-slate-600'>{`git clone ${clone}`}</code>
 					</div>
 					{lastCommit !== undefined && <CommitComponent commit={lastCommit} />}
 				</div>
