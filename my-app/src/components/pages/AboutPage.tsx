@@ -28,12 +28,13 @@ export default class About extends Component<Props, State> {
 						have been working on a variety of projects that have allowed me to
 						develop my skills in frontend development along with overall
 						knowledge of software systems. I am passionate about working of
-						projects for both fun and to see systems I&#39m working on grow with
-						time, and I am always looking for new challenges and opportunities
-						to learn and grow. I am excited to share some of my work with you on
-						my portfolio site, and I welcome the opportunity to discuss
-						potential projects or collaborations. Please feel free to contact me
-						via email or social media if you would like to learn more.
+						projects for both fun and to see systems I&#39;m working on grow
+						with time, and I am always looking for new challenges and
+						opportunities to learn and grow. I am excited to share some of my
+						work with you on my portfolio site, and I welcome the opportunity to
+						discuss potential projects or collaborations. Please feel free to
+						contact me via email or social media if you would like to learn
+						more.
 					</p>
 				</div>
 			</div>
