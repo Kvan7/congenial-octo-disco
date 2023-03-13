@@ -50,8 +50,8 @@ function RepoFull(props: PropsWithChildren) {
 
 	return (
 		<div className={className}>
-			<div className='my-4 p-4 border-green-300 border-4 flex ' id={name}>
-				<div className='w-7/12'>
+			<div className='my-4 p-4 border-green-300 border-4 sm:flex ' id={name}>
+				<div className='sm:w-7/12 w-full'>
 					<div className='border-b-4 w-full'>
 						<a
 							className='text-3xl font-bold tracking-wider font-mono'
@@ -64,13 +64,13 @@ function RepoFull(props: PropsWithChildren) {
 					</div>
 					<div className='mt-4'>{about}</div>
 					<div className='py-4'>
-						<code className='bg-slate-600 py-1 px-2 ml-4 '>
-							{`git clone ${clone}`}
-						</code>
+						<div className='py-1 px-2 ml-4 overflow-x-scroll whitespace-nowrap w-full shrink'>
+							<code className=' border bg-slate-600'>{`git clone ${clone}`}</code>
+						</div>
 					</div>
 					{lastCommit !== undefined && <CommitComponent commit={lastCommit} />}
 				</div>
-				<div className='grid place-items-center w-5/12'>
+				<div className='grid place-items-center w-full sm:w-5/12'>
 					<img className='' src={`./img/${imgName}.png`} alt='icon' />
 					<div className='text-center'>
 						<a
@@ -93,11 +93,11 @@ function RepoShort(props: PropsWithChildrenShort) {
 
 	return (
 		<div className={className}>
-			<div className='border-green-600 py-4 px-2 flex border'>
-				<div className='w-1/2 px-2'>
+			<div className='border-green-600 w-full md:flex border-2'>
+				<div className='md:w-1/2 p-8 '>
 					<img className='' src={`./img/${imgName}.png`} alt='icon' />
 				</div>
-				<div className='w-1/2 px-2'>
+				<div className='md:w-1/2 p-8'>
 					<a href={`#${name}`} className='text-4xl font-bold underline'>
 						{name}
 					</a>

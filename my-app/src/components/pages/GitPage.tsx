@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Carousel from '../Carousel';
-import { RepoFull, RepoShort } from '../RepoComponent';
+import GitCarousel from '../GitCarousel';
+import { RepoFull } from '../RepoComponent';
 import repos from './git.json';
 
 type Props = {};
 
 type State = {};
-
-const carouselChildCSS = 'w-full shrink-0 flex-grow';
 
 export default class GitPage extends Component<Props, State> {
 	constructor(props: Props) {
@@ -16,7 +14,6 @@ export default class GitPage extends Component<Props, State> {
 	}
 
 	render() {
-		const elms = [];
 		const allElms = [];
 		for (let i = 0; i < 10; i++) {
 			allElms.push(
@@ -31,18 +28,7 @@ export default class GitPage extends Component<Props, State> {
 		for (let i = 0; i < repos.length; i++) {
 			const element = repos[i];
 			const com = element['last-commit'];
-			if (i < 5) {
-				elms.push(
-					<RepoShort
-						about={element.about}
-						name={element['repo-name']}
-						imgName={element.img}
-						// url={element.url}
-						// clone={element.clone}
-						className={carouselChildCSS}
-					/>
-				);
-			}
+
 			repoElements.push(
 				<RepoFull
 					about={element.about}
@@ -70,12 +56,14 @@ export default class GitPage extends Component<Props, State> {
 		return (
 			<div className='px-5'>
 				<div className='text-3xl'>Git</div>
-				<Carousel>{elms}</Carousel>
+				<div className='w-full flex justify-center'>
+					<GitCarousel className='md:w-10/12  w-full p-1 shrink' />
+				</div>
 				<hr />
 				<div className='grid place-items-center py-4'>
 					<div className='text-3xl font-bold underline'> Commit Calendar </div>
 					<img
-						className='w-full px-12 py-8'
+						className='w-full md:px-12 py-8'
 						src='https://ghchart.rshah.org/Kvan7'
 						alt='commit chart'
 					/>
